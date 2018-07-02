@@ -1,0 +1,58 @@
+<div>
+
+<div class="container">
+  Your Details are::<br>
+  <p>Name::{{getData.name}}</p>
+  <p>Address::{{getData.address}}</p>
+</div>
+
+<input type="text" ng-model="game">
+
+  <div cla="container">
+
+  Games are:
+  <ul>
+    <li ng-repeat="x in games| filter:game">{{x}}</li>
+  </ul>
+
+  <p>The Game i Like is {{games[0]|uppercase}}</p>
+
+  <ul>
+    <li ng-repeat="y in capitals | orderBy:'country'">
+      {{y.country +','+y.capital}}
+    </li>
+  </ul>
+  <p> Price {{price | currency}}</p>
+
+  <table border="1" width="100%">
+    <tr>
+      <th ng-click="orderByMe('country')">Country</th>
+      <th ng-click="orderByMe('capital')">Capital</th>
+    </tr>
+    <tr ng-repeat="z in capitals| orderBy:myOrderBy">
+      <td>{{z.country}}</td>
+      <td>{{z.capital}}</td>
+    </tr>
+  </table>
+
+  <ul>
+    <li ng-repeat="p in games">
+      {{p|myFormat}}
+    </li>
+  </ul>
+
+  <p> List of students:</p>
+
+  <ul>
+    <li ng-repeat="m in info">
+      {{m | newFormat}}
+    </li>
+  </ul>
+
+
+<pg-hello></pg-hello>
+  <div pg-hello>
+
+  </div>
+</div>
+</div>
